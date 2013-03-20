@@ -12,9 +12,16 @@ The bootstrap process is a little primitive now, but here are the steps:
   * might be unnecessary now
   * yum -y groupinstall "Development Tools"
 1. install YAML::Syck and makemaker
+For Redhat/Centos,
 <pre>
 yum install perl-YAML-Syck perl-ExtUtils-MakeMaker
 </pre>
+
+For Ubuntu/Debian,
+<pre>
+apt-get install libyaml-syck-perl
+</pre>
+
 1. git clone multipkg
 1. cd multipkg
 1. manually build and install your first multipkg package
