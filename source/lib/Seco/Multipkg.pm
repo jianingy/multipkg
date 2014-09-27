@@ -5,6 +5,7 @@ use constant MULTIPKG_VERSION => '__MULTIPKG_BUILD_VERSION__';
 use File::Spec;
 use File::Basename;
 use Cwd;
+use Data::Dumper;
 
 use base qw/Seco::Class/;
 
@@ -81,6 +82,11 @@ sub build {
     force   => $self->force,
     cwd     => $self->cwd
   ) if ( $self->info->data->{packagetype} eq 'tarball' );
+
+  # set environment variable
+  for my $name (keys %{$self->info->data->{env}}) {
+    $ENV{$name} = $self->info->data->{env}->{$name};
+  }
 
   $builder->build;
   $builder->copyroot;
