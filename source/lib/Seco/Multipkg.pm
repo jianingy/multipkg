@@ -711,6 +711,8 @@ sub shebangmunge {
       my $firstline = <$g>;
       next unless ( $firstline =~ m#^\#\!(/.*/)(\w+)\s+?(.*)# );
       my ( $path, $interpreter, $options ) = ( $1, $2, $3 );
+      # skip shebang like '/usr/bin/env perl'.
+      next if $interpreter eq 'env';
 
       if ( $self->info->data->{$interpreter} ) {
         $self->infomsg("SHEBANG-MUNGING $interpreter: $dirname/$f");
