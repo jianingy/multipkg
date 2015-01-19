@@ -1,6 +1,6 @@
 default:
     name: multipkg
-    version: '1.3.6'
+    version: '1.3.7'
     summary: Automation for package builds (supports RPM, deb)
     buildprefix: /usr
 rpm:
