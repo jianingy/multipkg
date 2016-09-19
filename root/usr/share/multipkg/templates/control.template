@@ -4,5 +4,8 @@ Architecture: %arch%
 Depends: %requirelist%
 Maintainer: %whoami%
 Source: %name%
+%%ifset(keepopt)
+%keepopt%
+%%endif
 Description:
  %summary%
