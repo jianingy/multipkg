@@ -7,4 +7,7 @@ Gem::Specification.new do |s|
   s.description = "%summary%"
   s.authors = ["No Body"]
   s.files = [ %filelist% ]
+%%ifset(keepopt)
+  %keepopt%
+%%endif
 end

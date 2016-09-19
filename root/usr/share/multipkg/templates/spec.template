@@ -15,7 +15,9 @@ Obsoletes: %obsoletelist%
 %%ifset(prefix)
 Prefix: %prefix%
 %%endif
-
+%%ifset(keepopt)
+%keepopt%
+%%endif
 %description
 %summary%
 
